@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>年号マスター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- タイトル画面 -->
+    <div id="titleScreen" class="container">
+        <h1>年号マスター</h1>
+
+        <p id="questionCount"></p>
+
+        <p>出来事が何年に起こったか答えよう！</p>
+
+        <button id="startButton">ゲームスタート</button>
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="gameScreen" class="container" style="display:none;">
+
+        <h2 id="questionNumber">第1問 / 20問</h2>
+
+        <div id="eventText">大化の改新</div>
+
+        <input
+            id="answerInput"
+            type="number"
+            placeholder="年号を入力">
+
+        <div id="timer">20秒</div>
+
+        <div id="resultMessage"></div>
+
+        <!-- テンキー -->
+        <div id="keypad">
+            <button class="key">1</button>
+            <button class="key">2</button>
+            <button class="key">3</button>
+
+            <button class="key">4</button>
+            <button class="key">5</button>
+            <button class="key">6</button>
+
+            <button class="key">7</button>
+            <button class="key">8</button>
+            <button class="key">9</button>
+
+            <button id="deleteKey">⌫</button>
+            <button class="key">0</button>
+            <button id="answerButton">回答</button>
+        </div>
+
+    </div>
+
+    <!-- 結果画面 -->
+    <div id="resultScreen" class="container" style="display:none;">
+
+        <h1>🎉 ゲーム終了！</h1>
+
+        <h2 id="scoreText"></h2>
+        <p id="accuracyText"></p>
+        <h2 id="rankText"></h2>
+
+        <h3>間違えた問題</h3>
+
+        <div id="wrongList"></div>
+
+        <button id="restartButton">もう一度遊ぶ</button>
+
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="game.js"></script>
+
+</body>
+</html>
