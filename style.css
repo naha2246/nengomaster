@@ -1,168 +1,153 @@
-body {
-    margin: 0;
-    font-family: "Yu Gothic", sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    transition: background 0.25s ease;
+body{
+    margin:0;
+    font-family:"Yu Gothic",sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100dvh;
+    overflow:auto;
+    transition:.25s;
 }
 
-.container {
-    text-align: center;
-    width: 90%;
-    max-width: 600px;
+.container{
+    width:min(600px,95%);
+    padding:14px 0 28px;
+    text-align:center;
 }
 
-h1 {
-    font-size: 60px;
-    margin-bottom: 15px;
+h1{
+    font-size:clamp(32px,7vw,56px);
+    margin:8px 0;
 }
 
-h2 {
-    margin: 15px 0;
+h2{
+    font-size:clamp(22px,5vw,30px);
+    margin:10px 0;
 }
 
-p {
-    font-size: 22px;
-    margin-bottom: 20px;
+p{
+    font-size:clamp(16px,4vw,22px);
 }
 
-button {
-    font-size: 24px;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 15px;
-    background: #2563eb;
-    color: white;
-    cursor: pointer;
-    transition: 0.2s;
+#questionCount{
+    color:#93c5fd;
 }
 
-button:hover {
-    background: #1d4ed8;
-    transform: scale(1.05);
+#eventText{
+    font-size:clamp(28px,6vw,40px);
+    min-height:48px;
+    margin:18px 0;
 }
 
-button:disabled {
-    opacity: 0.6;
-    cursor: default;
-    transform: none;
+#timerArea{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:10px auto 14px;
+    max-width:320px;
 }
 
-#eventText {
-    font-size: 40px;
-    margin: 30px 0;
-    min-height: 60px;
+#timer{
+    font-size:24px;
+    color:#facc15;
+    font-weight:bold;
 }
 
-input {
-    font-size: 32px;
-    text-align: center;
-    padding: 12px;
-    width: 220px;
-    border-radius: 10px;
-    border: none;
-    margin-bottom: 15px;
+.warning{
+    color:#ef4444!important;
+    animation:blink .5s infinite;
 }
 
-#timer {
-    font-size: 28px;
-    margin: 20px 0;
-    color: #facc15;
-    font-weight: bold;
+@keyframes blink{
+    50%{opacity:.3;}
 }
 
-.warning {
-    color: #ef4444 !important;
-    animation: blink 0.5s infinite;
+#comboText{
+    color:#f97316;
+    font-size:20px;
+    font-weight:bold;
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0.3;
-    }
+input{
+    width:180px;
+    font-size:26px;
+    text-align:center;
+    padding:10px;
+    border:none;
+    border-radius:10px;
 }
 
-#resultMessage {
-    font-size: 28px;
-    font-weight: bold;
-    height: 40px;
-    margin: 15px 0;
+#resultMessage{
+    height:34px;
+    font-size:22px;
+    margin:10px 0;
 }
 
-.correct {
-    color: #22c55e;
+.correct{color:#22c55e;}
+.wrong{color:#ef4444;}
+
+button{
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.wrong {
-    color: #ef4444;
+button:hover{
+    background:#1d4ed8;
 }
 
-#questionCount {
-    font-size: 20px;
-    color: #93c5fd;
+button:disabled{
+    opacity:.6;
+    cursor:default;
 }
 
-#rankText {
-    color: #facc15;
-    margin-bottom: 20px;
+#keypad{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    max-width:280px;
+    margin:0 auto;
 }
 
-#wrongList {
-    text-align: left;
-    max-width: 500px;
-    margin: 20px auto;
-    max-height: 250px;
-    overflow-y: auto;
-    background: rgba(255,255,255,0.08);
-    border-radius: 10px;
-    padding: 15px;
+#keypad button{
+    padding:14px;
+    font-size:24px;
 }
 
-.wrongItem {
-    margin: 8px 0;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+#wrongList{
+    text-align:left;
+    max-height:240px;
+    overflow:auto;
+    background:rgba(255,255,255,.08);
+    border-radius:10px;
+    padding:12px;
 }
 
-/* テンキー */
-
-#keypad {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 12px;
-    margin-top: 20px;
+.wrongItem{
+    padding:8px 0;
+    border-bottom:1px solid rgba(255,255,255,.2);
 }
 
-#keypad button {
-    padding: 20px;
-    font-size: 28px;
+#rankText{
+    color:#facc15;
 }
 
-#comboText {
-    color: #f97316;
-    font-size: 26px;
-    font-weight: bold;
-    height: 35px;
-    margin-bottom: 10px;
+.flash-correct{
+    background:linear-gradient(135deg,#065f46,#16a34a);
 }
 
-.flash-correct {
-    background: linear-gradient(135deg,#065f46,#16a34a);
+.flash-wrong{
+    background:linear-gradient(135deg,#7f1d1d,#dc2626);
 }
 
-.flash-wrong {
-    background: linear-gradient(135deg,#7f1d1d,#dc2626);
-}
-
-@media (min-width:768px){
-
-    #keypad{
-        max-width:350px;
-        margin:20px auto 0;
-    }
-
+@media (max-height:720px){
+    h1{font-size:28px;}
+    #eventText{font-size:24px;margin:12px 0;}
+    #keypad{max-width:250px;gap:6px;}
+    #keypad button{padding:11px;font-size:22px;}
 }
