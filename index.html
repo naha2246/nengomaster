@@ -11,11 +11,8 @@
     <!-- タイトル画面 -->
     <div id="titleScreen" class="container">
         <h1>年号マスター</h1>
-
         <p id="questionCount"></p>
-
         <p>出来事が何年に起こったか答えよう！</p>
-
         <button id="startButton">ゲームスタート</button>
     </div>
 
@@ -26,12 +23,15 @@
 
         <div id="eventText">大化の改新</div>
 
+        <div id="timerArea">
+            <div id="comboText"></div>
+            <div id="timer">20秒</div>
+        </div>
+
         <input
             id="answerInput"
             type="number"
             placeholder="年号を入力">
-
-        <div id="timer">20秒</div>
 
         <div id="resultMessage"></div>
 
